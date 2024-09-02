@@ -14,24 +14,23 @@ public class Main {
                     5. Square root
                     6. Square of a number
                     """);
-            Calculate calc = new Calculate();
             Scanner scan = new Scanner(System.in);
             var prop = scan.nextLine();
             switch (prop) {
                 case "1":
                     a = scan.nextFloat();
                     b = scan.nextFloat();
-                    System.out.println(calc.add(a, b));
+                    System.out.println(Calculate.add(a, b));
                     break;
                 case "2":
                     a = scan.nextFloat();
                     b = scan.nextFloat();
-                    System.out.println(calc.subtract(a, b));
+                    System.out.println(Calculate.subtract(a, b));
                     break;
                 case "3":
                     a = scan.nextFloat();
                     b = scan.nextFloat();
-                    System.out.println(calc.multiply(a, b));
+                    System.out.println(Calculate.multiply(a, b));
                     break;
                 case "4":
                     do {
@@ -41,7 +40,7 @@ public class Main {
                         }
                     } while (a == 0);
                     b = scan.nextFloat();
-                    System.out.println(calc.divide(a, b));
+                    System.out.println(Calculate.divide(a, b));
                     break;
                 case "5":
                     do {
@@ -50,11 +49,11 @@ public class Main {
                             System.out.println("Invalid number. Please enter a positive number.");
                         }
                     } while (a <= 0);
-                    System.out.println(calc.square(a));
+                    System.out.println(Calculate.square(a));
                     break;
                 case "6":
                     a = scan.nextFloat();
-                    System.out.println(calc.pow(a));
+                    System.out.println(Calculate.pow(a));
                     break;
             }
         } while (true);
