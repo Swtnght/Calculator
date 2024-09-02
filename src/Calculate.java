@@ -1,31 +1,42 @@
-import java.io.IOException;
-import java.util.Scanner;
+import javax.naming.NameNotFoundException;
 
 public class Calculate {
-    public int a,b,c;
-    Scanner scan = new Scanner(System.in);
-    public Calculate(){
-        a = 0;
-        b = 0;
-        c = 0;
+    //no-arg constructor
+    public Calculate() {
     }
-    public Calculate(int a){
-        this.a = a;
+
+    public double add(float a, float b) {
+        return a + b;
     }
-    public Calculate(int a, int b){
-        this.a = a;
-        this.b = b;
+
+    public double subtract(float a, float b) {
+        return a - b;
     }
-    public int Sum(){
-        try{
-            a = Integer.parseInt(scan.nextLine());
-        } catch (Exception ex){
-            System.out.println("Введено не число!!!!");
-            return -111111;
-        } finally {
-            System.out.println("");
+
+    public double multiply(float a, float b) {
+        return a * b;
+    }
+
+    public double divide(float a, float b) {
+        double result;
+        if (b == 0) {
+            throw new IllegalArgumentException("Divisor cannot divide by zero");
+        } else {
+            result = Double.valueOf(a) / Double.valueOf(b);
         }
-        b = Integer.parseInt(scan.nextLine());
-        return a+b;
+        return result;
+    }
+
+    public double square(float a) {
+        double temp;
+        double square = (double) a / 2;
+        do {
+            temp=square;
+            square = (temp+(a/temp))/2;
+        } while((temp-square)!= 0);
+        return square;
+    }
+    public double pow(float a){
+        return (a*a);
     }
 }
